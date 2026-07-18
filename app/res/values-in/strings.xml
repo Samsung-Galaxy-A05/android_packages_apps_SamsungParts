@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SamsungParts</string>
+    <string name="fast_charging_title">Aktifkan pengisian cepat</string>
+    <string name="fast_charging_summery">Izinkan sistem untuk mengisi baterai dengan cepat.</string>
+    <string name="protect_battery_title">Perlindungan Baterai</string>
+    <string name="charging_status">Pengisian berhenti pada %1$d%%</string>
+    <string name="protect_battery_disable">Perlindungan Baterai dinonaktifkan.</string>
+    <string name="protect_battery_summary">Pengisian cepat dan perlindungan baterai</string>
+    <string name="protect_battery_hint">Membiarkan baterai terisi penuh dalam waktu yang lama dapat mengurangi masa pakainya. Atur batas pengisian untuk menjaga kesehatan baterai.</string>
+</resources>

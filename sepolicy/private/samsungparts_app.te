@@ -1,0 +1,5 @@
+type samsungparts_app, domain, coredomain;
+app_domain(samsungparts_app)
+
+# Allow the app to interact with the property service
+set_prop(samsungparts_app, sec_batt_persist_prop)

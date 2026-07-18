@@ -1,0 +1,2 @@
+persist.sec.battery	u:object_r:sec_batt_persist_prop:s0
+persist.sec.fastcharge	u:object_r:sec_batt_persist_prop:s0

@@ -3,3 +3,6 @@ app_domain(samsungparts_app)
 
 # Allow the app to interact with the property service
 set_prop(samsungparts_app, sec_batt_persist_prop)
+
+# Allows app domain to talk to init's property controller socket
+unix_socket_connect(samsungparts_app, property, init)

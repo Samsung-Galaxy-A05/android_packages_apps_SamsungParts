@@ -1,0 +1,36 @@
+android_app {
+    name: "SamsungParts",
+    srcs: ["src/**/*.java", "src/**/*.kt"],
+    sdk_version: "current",
+    
+    resource_dirs: ["res"],
+    manifest: "AndroidManifest.xml",
+
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+    system_ext_specific: true,
+
+    optimize: {
+        enabled: true,
+        optimize: true,
+        shrink: true,
+        shrink_resources: true,
+        proguard_compatibility: false,
+        proguard_flags_files: ["proguard.flags"],
+    },
+
+    static_libs: [
+        "com.google.android.material_material",
+        "androidx.core_core-ktx",
+        "androidx.appcompat_appcompat",
+        "androidx.activity_activity-ktx",
+    ],
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-samsungparts.xml",
+    src: "privapp-permissions-samsungparts.xml",
+    sub_dir: "permissions",
+    system_ext_specific: true,
+}

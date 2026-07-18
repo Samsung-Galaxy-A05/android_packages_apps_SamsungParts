@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SamsungParts</string>
+    <string name="fast_charging_title">Enable fast charging</string>
+    <string name="fast_charging_summery">Charge battery faster</string>
+    <string name="protect_battery_title">Battery Protection</string>
+    <string name="charging_status">Charging stops at %1$d%%</string>
+    <string name="protect_battery_disable">Battery protection is disabled</string>
+    <string name="protect_battery_summary">Fast charging and battery protection</string>
+    <string name="protect_battery_hint">Keeping your battery at a full 100% charge for long periods can reduce its lifespan. Set a charging limit to help preserve battery health.</string>
+</resources>

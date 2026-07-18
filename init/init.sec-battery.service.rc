@@ -1,0 +1,17 @@
+on property:persist.sec.fastcharge=1
+   write /sys/class/sec/switch/afc_disable 0
+on property:persist.sec.fastcharge=0
+   write /sys/class/sec/switch/afc_disable 1
+   
+on property:persist.sec.battery=0
+   write /sys/class/power_supply/battery/batt_full_capacity 100
+on property:persist.sec.battery=1
+   write /sys/class/power_supply/battery/batt_full_capacity 80
+on property:persist.sec.battery=2
+   write /sys/class/power_supply/battery/batt_full_capacity 85
+on property:persist.sec.battery=3
+   write /sys/class/power_supply/battery/batt_full_capacity 90
+on property:persist.sec.battery=4
+   write /sys/class/power_supply/battery/batt_full_capacity 95
+on property:persist.sec.battery=5
+   write /sys/class/power_supply/battery/batt_full_capacity 100

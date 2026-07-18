@@ -1,0 +1,6 @@
+prebuilt_etc {
+    name: "init.sec-battery.service.rc",
+    src: "init.sec-battery.service.rc",    
+    sub_dir: "init",
+    system_ext_specific: true,
+}

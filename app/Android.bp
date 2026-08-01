@@ -6,7 +6,6 @@ android_app {
     resource_dirs: ["res"],
     manifest: "AndroidManifest.xml",
 
-    platform_apis: true,
     certificate: "platform",
     privileged: true,
     system_ext_specific: true,

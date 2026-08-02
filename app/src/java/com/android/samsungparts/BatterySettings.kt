@@ -29,35 +29,27 @@ class BatterySettings : AppCompatActivity() {
         collapsingToolbar = findViewById(R.id.collapsingToolbar)
 
         setSupportActionBar(toolbar)
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        collapsingToolbar.title =
-            getString(R.string.protect_battery_title)
+        collapsingToolbar.title = getString(R.string.protect_battery_title)
 
         toolbar.setNavigationOnClickListener {
             finish()
         }
 
         fastCharging = findViewById(R.id.fastCharging)
+        batteryProtection = findViewById(R.id.batteryProtectionSwitch)
+        protectionSlider = findViewById(R.id.protectionSlider)
+        protectionSummary = findViewById(R.id.protectionSummary)
 
-        batteryProtection =
-            findViewById(R.id.batteryProtectionSwitch)
-
-        protectionSlider =
-            findViewById(R.id.protectionSlider)
-
-        protectionSummary =
-            findViewById(R.id.protectionSummary)
-
-        // Fix invalid / missing properties
+        // 1. Fix missing/invalid properties
         initializeDefaultProps()
 
-        // Load current status
+        // 2. Load and set initial UI state FIRST (before attaching listeners)
         loadFastChargeStatus()
         loadBatteryStatus()
 
-        // Fast charging switch
+        // 3. Attach listeners AFTER state is loaded
         fastCharging.setOnCheckedChangeListener { _, checked ->
             setProp(
                 "persist.sec.fastcharge",
@@ -65,9 +57,10 @@ class BatterySettings : AppCompatActivity() {
             )
         }
 
-        // Battery protection switch
+        batteryProtection.setOnCheckedChangeListener { switchView, checked ->
+            // Ensure this only fires on manual user interactions
+            if (!switchView.isPressed) return@setOnCheckedChangeListener
 
-        batteryProtection.setOnCheckedChangeListener { _, checked ->
             if (checked) {
                 protectionSlider.isEnabled = true
                 updateBatteryLimit(
@@ -80,19 +73,14 @@ class BatterySettings : AppCompatActivity() {
                     "5",
                 )
                 protectionSlider.isEnabled = false
-                protectionSummary.text =
-                    getString(
-                        R.string.protect_battery_disable,
-                    )
+                protectionSummary.text = getString(R.string.protect_battery_disable)
             }
         }
 
-        // Battery limit slider
-        protectionSlider.addOnChangeListener { _, value, _ ->
-            if (batteryProtection.isChecked) {
-                updateBatteryLimit(
-                    value.toInt(),
-                )
+        protectionSlider.addOnChangeListener { slider, value, fromUser ->
+            // Only update property if the change came from user interaction
+            if (fromUser && batteryProtection.isChecked) {
+                updateBatteryLimit(value.toInt())
             }
         }
     }

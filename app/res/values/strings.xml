@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SamsungParts</string>
     <string name="fast_charging_title">Enable fast charging</string>
-    <string name="fast_charging_summery">Charge battery faster</string>
+    <string name="fast_charging_summery">Allow system to charge battery faster</string>
     <string name="protect_battery_title">Battery Protection</string>
     <string name="charging_status">Charging stops at %1$d%%</string>
     <string name="protect_battery_disable">Battery protection is disabled</string>

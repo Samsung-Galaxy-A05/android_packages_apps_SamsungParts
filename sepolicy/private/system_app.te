@@ -1,0 +1,5 @@
+# Allow system apps to read persist.sec.battery
+get_prop(system_app, sec_batt_persist_prop)
+
+# Allow system apps to set persist.sec.battery
+set_prop(system_app, sec_batt_persist_prop)

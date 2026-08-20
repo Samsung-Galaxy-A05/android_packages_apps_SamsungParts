@@ -1,0 +1,1 @@
+/sys/devices/virtual/sec/switch/afc_disable    u:object_r:sysfs_batteryinfo:s0
